@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ? Navbar-Start */
+#navbar ul li{
+    list-style-type:none;
+    margin: 0.7rem;
+}
+#navbar ul{
+    display: flex;
+}
+#navbar h1{
+    color: #fff;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+.navbar ul li a{
+    padding: .5rem;
+    transition: 0.3s all ease;
+}
+.navbar ul li #matematik{
+    border-bottom: 1px solid #cc98f4;
+}
+.navbar ul li #saglik{
+    border-bottom: 1px solid #cc98f4;
+}
+
+.navbar ul li a:hover{
+    background: #fff;
+    color: #818181;
+    border-radius: .5rem;
+}
+.navbar ul li ul{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-top: 0.5rem;
+    margin-left: -1px;
+}
+.navbar ul li ul li a{
+    color:#8f00ff;
+    margin: -0.5rem;
+}
+.navbar ul li ul li a:hover{
+    color: white;
+    background-color: #8f00ff;
+}
+
+/* ? Navbar-End */
+/* ? colums-Start */
+
+
+.row{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.row .col-1,
+.row .col-2{
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1.7rem;
+}
+.row .col-1  .başlık{
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    width: 700px;
+}
+
+.row .col-1 li{
+    font-weight: bold;
+}
+
+.row .col-1{
+    padding-left: 13%;
+}
+.row .col-2{
+    padding-right: 13%;
+}
+
+.row .col-1 p{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.row .col-1 .hesaplayici{
+    width: 700px;
+    height: 350px;
+    background-color: rgb(244, 242, 242);
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.row .col-1 .hesaplayici li{
+    list-style-type: none;
+}
+
+.row .col-2 .social-media p::after{
+    content: "";
+    width: 300px;
+    height: 1.3px;
+    display: block;
+    background-color: #2962a5;
+    margin: 0.5rem 2rem;  
+}
+
+.row .col-2 .social-media {
+    text-align: center;
+    margin-left: 3rem;
+}
+.row .col-2{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    border-left: 2px solid #2962a5;
+}
+.row .col-2 .social-media .fa-instagram{
+    text-decoration: none;
+    animation-name: instagram-animation;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+    
+}
+@keyframes instagram-animation
+{
+    25% { transform: rotate(45deg);}
+    33%  { color: red; }
+    50%{  transform: rotate(0deg);}
+    66%  { color: blue; }
+    75% { transform: rotate(-45deg);}
+    100%  { color: yellow;   transform: rotate(0deg);}
+}
+.row .col-2 .social-media .fa-instagram:hover{
+    animation-iteration-count: 0;
+}
+.row .col-2 .social-media .fa-facebook{
+    animation-name: facebook-animation;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+}
+@keyframes facebook-animation
+{   
+    25% { transform: rotate(45deg);}
+    33%  { color: red; }
+    50%{  transform: rotate(0deg);}
+    66%  { color: blue; }
+    75% { transform: rotate(-45deg);}
+    100%  { color: yellow;   transform: rotate(0deg);}
+}
+.row .col-2 .social-media .fa-facebook:hover{
+    animation-iteration-count: 0;
+}
+
+.col-2 .oneriler .oneri{
+    
+    margin-top: 1rem;
+    background-color: #8f00ff;
+    border-radius: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-left: 3rem;
+    font-family: sans-serif;
+    line-height: 24px;
+    
+}
+.col-2 .oneriler .oneri p{
+    font-size: 24px;
+    margin-bottom: 1.75rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: normal;
+    margin-top: 2rem;
+}
+
+/* Contact Start */
+#contact {
+    color: #fff;
+    margin-top: 7rem;
+    padding: 1rem;
+}
+
+#contact .contact-form{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .contact-form ul{
+    list-style-type: none; /* listelerdeki noktalar gitti */
+    display: flex; /*yan yana geldi*/
+    margin-top: 1rem;
+    align-self: center; /*ortalamak için kullandık*/
+}
+
+#contact .contact-form ul li a{
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+#contact .contact-form ul li a:hover{
+    opacity: 0.8;
+}
+
+/* Secimler */
+em{
+    color: red;
+}
+.deger{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    font-size: 1.3rem;
+}
+#kilo{
+    margin-right: 1.3rem;
+}
+.secimler{
+    display: flex;
+    flex-direction: column;
+    margin-right: 27rem;
+}
+input[type=checkbox], input[type=radio], label, select {
+    cursor: pointer;
+}
+li>label{
+    cursor: auto;
+}
+input[type=radio]{
+    width: 1rem;
+    height: 1rem;
+}
+.deger-girisi{
+    margin-right: 25rem;
+    display: flex;
+}
+.veri1{
+    width: 4rem;
+    margin-right: 1rem;
+}
+input[type=email], input[type=number],
+input[type=text], select, textarea{
+    font-size: 1rem;
+    box-shadow: .03rem 0.1rem 0.15rem 0 rgba(0,0,0,.08);
+    border: 2px solid #aaa;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /*? hide number arrows on Chrome, Safari, Edge, Opera */
+  -webkit-appearance: none;
+  margin: 0;
+}
+.buttons{
+    display: flex;
+    margin-left: 20rem;
+    margin-top: 1.5rem;
+}
+.row .col-1 .btn{
+    border-radius: 10px;
+    box-shadow: black;
+    color: #fff;
+}
+.btn-hesapla{
+    font-size: 1rem;
+    animation-name: hesapla-animation;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    transition: all 0.3s ease;
+}
+.btn-temizle{
+    font-size: 1rem;
+    margin-left: 10px;
+    animation-name: temizle-animation;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    transition: all 0.3s ease;
+}
+@keyframes hesapla-animation
+{   
+    0% {background-color: #8f00ff;}
+    33%  { background-color: #b65afd; }
+    66%  { background-color: #9f29f9; }
+    100%  { background-color: #8f00ff;}
+}
+
+@keyframes temizle-animation
+{   
+    0% {background-color: red;}
+    33%  { background-color: rgb(254, 45, 45); }
+    66%  { background-color: rgb(247, 97, 97); }
+    100%  { background-color: red;}
+}
+
+.row .col-1 .btn-hesapla:hover{
+    animation-iteration-count: 0;
+    background-color: #b65afd;
+}
+.row .col-1 .btn-temizle:hover{
+    animation-iteration-count: 0;
+    background-color: rgb(247, 97, 97);;
+}
+
+.btn-hesapla:active{
+    transform: scale(0.7);
+}
+.btn-temizle:active{
+    transform: scale(0.7);
+}
+
+.row .col-1 .cevap{
+    margin-top: 1rem;
+    width: 700px;
+    height: 160px;
+    background-color: rgb(244, 242, 242);
+    border-radius: 1rem;
+}
+.row .col-1 #cevap{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.row .col-1 .cevap p{
+    padding: 1.5rem 0rem 0rem 2rem;
+    margin-bottom: -1rem;
+}
+
+.row .col-1 .cevap .iletisim{
+    font-weight: bold;
+}
+
+.row .col-1 .cevap a{
+    color: red;
+    text-decoration:underline;
+}
+
+.row .col-1 .bos-deger{
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 5px solid rgb(214, 214, 58);
+    background-color: #f6f6f6;
+}
+.row .col-1 .bos-deger .fa-circle-exclamation{
+    font-size: 30px;
+    margin-top:1rem;
+}

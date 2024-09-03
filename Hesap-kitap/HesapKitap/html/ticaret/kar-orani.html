@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kar Orani Hesaplayici</title>
+        <script src="/JS/kar-orani.js"></script>
+        <link rel="stylesheet" href="/CSS/global.css">
+        <link rel="stylesheet" href="/CSS/alan-hesaplama.css">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;600&display=swap" rel="stylesheet">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+<body>
+    <!--! nav bar start -->
+    <header class="bg-purple-violet navbar">
+        <div class="container">
+        <nav id="navbar" class="navbar">
+            <h1 class="heading-big">Hesap Kitap</h1>
+            <ul>
+                <li onmouseover="dropdown_matematik();" onmouseout="dropdownout_matematik();">
+                    <a href="#" id="matematik" >Matematik</a>
+                    <ul class="matematik" style="display: none;">
+                        <li><a href="/html/matematik/alan-hesaplama.html">Alan Hesaplama</a></li>
+                    </ul>
+                </li>
+                <li onmouseover="dropdown_saglik();" onmouseout="dropdownout_saglik();">
+                    <a href="#" id="saglik">Sağlık</a>
+                    <ul class="saglik" style="display: none;">
+                        <li><a href="/html/saglik/vucut-kitle-index.html">Vücut kitle İndeksi</a></li>
+                    </ul>
+                </li>
+                <li onmouseover="dropdown_ticaret();" onmouseout="dropdownout_ticaret();">
+                    <a href="#" id="ticaret">Ticaret</a>
+                    <ul class="ticaret" style="display: none;">
+                        <li><a href="/html/ticaret/kar-orani.html">Kâr Oranı Hesaplama</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--! nav bar end -->
+
+    <!-- ! column -->
+    <div class="row">
+        <div class="col-1">
+            <h1>Kar Oranı Hesaplama</h1>
+            <p>Aşağıdan istediğiniz kar oranı türünü seçin. Tercihinize göre; kar oranı, alış fiyatı, satış fiyatı değerlerini girin. Sizin yerinize kar oranı ve kar marjını hesaplayalım.</p>
+            <div id="cevap" style="display: none;">
+                <div class="başlık border-purple-violet font-yanone-kaffeesatz">Cevap</div>
+                <div class="cevap" id="sonuc">
+                    <p class="alan-sonuc"></p>
+                    <p class="iletisim">fikirlerinizi <a href="#contact">iletişim</a> bölümünden belirtebilirsiniz.</p>
+                    <p class="iletisim">Girdiğiniz bilgileri değiştirerek tekrar alan hesaplayabilirsiniz.</p>
+                </div>
+            </div>
+
+            <div id="bos-deger" class="bos-deger" style="display: none;">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>Boş değer giremezsiniz. Lütfen girdiğiniz değerleri kontrol edip tekrar deneyiniz.</p>
+            </div>
+            
+            <div class="başlık border-purple-violet font-yanone-kaffeesatz">Hesaplama Aracı</div>
+            <div class="hesaplayici font-opensans">
+                <ul>
+                    <li class="cisim">
+                        <label>
+                            <em>*</em>
+                            Geometrik Cisim:
+                        </label>
+                        <div class="secimler">
+                            <label for="secim">
+                                <input id="secim" type="radio" name="secim" value="D" checked="checked" onchange="sekilsecim();">
+                                Dikdörtgen (veya Kare)
+                            </label>
+                            <label for="secimB">
+                                <input id="secimB" type="radio" name="secim" value="U" onchange="sekilsecim();">
+                                Üçgen
+                            </label>
+                            <label for="secimC">
+                                <input id="secimC" type="radio" name="secim" value="C" onchange="sekilsecim();">
+                                Daire (Çember)
+                            </label>
+                        </div>
+                    </li>
+                    <li id="li_alis" class="cisim" style="display: flex;">
+                        <label for="alis">
+                            <em>*</em>
+                            Alış Fiyatı:
+                        </label>
+                        <div class="uzunlukgirisi">
+                            <input type="number" name="alis" id="alis" step="0.0000001" class="veri1" value="">
+                        </div>
+                    </li>
+                    <li id="li_satis" class="cisim" style="display: flex;">
+                        <label>
+                            <em>*</em>
+                            Satış Fiyatı:
+                        </label>
+                        <div class="uzunlukgirisi">
+                            <input type="number" name="satis" id="satis" step="0.0000001" class="veri1" value="">
+                        </div>
+                    </li>
+                    <li id="li_kar" class="cisim " style="display: none;">
+                        <label>
+                            <em>*</em>
+                            Kar Oranı (%):
+                        </label>
+                        <div class="uzunlukgirisi" >
+                            <input type="number" name="kar" id="kar" step="0.0000001" class="veri1" value="">
+                            cm
+                        </div>
+                    </li>                    
+                </ul>
+                <div class="buttons">
+                    <a href="#cevap"><button class="btn btn-hesapla font-montserrat" onclick="alanhesap();">Hesapla</button></a>
+                    <button class="btn btn-temizle font-montserrat" onclick="temizle();">Temizle</button>
+                </div>
+            </div>
+            
+            
+
+            <div class="bilgilendirmeler">
+                
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="social-media">
+                <p>Hesap Kitap'ı takip edin</p>
+                    <a href="https://www.instagram.com/nuroheimer/" target="_blank"><i class="fa-brands fa-instagram fontsize-2rem" style="color: #1d0288;"></i></a>
+                    <a href="https://www.instagram.com/nuroheimer/" target="_blank"><i class="fa-brands fa-facebook fontsize-2rem" style="color: #1d0288;"></i></a>
+            </div>
+            <div class="oneriler">
+                <a href="#contact"><div class="oneri"><p>Önerilere Açığız</p>Sizden gelen öneriler doğrultusunda sitemizi geliştiriyoruzç
+                    Yeni bir iyileştirme (arayüz, hesaplama aracı vb.) istiyorsanız
+                    gerek sosyal medya hesaplarımızdan gerekse mail adreslerimizden
+                    ulaşabilirsiniz.</div></a>
+            </div>
+        </div>
+    </div>
+    <!-- ! Column end -->
+
+    <!-- ! Contact Start -->
+    <section>
+        <footer id="contact" class="bg-purple-violet">
+            <div class="contact-form">
+                <form>
+                    <h4 class="text-center heading-medium">Bana Ulaşın</h4>
+                    
+                    <div class="form-group">
+                        <label for="name">İsim</label>
+                        <input 
+                        type="text" 
+                        name="name" 
+                        class="form-control" 
+                        id="name" 
+                        placeholder="İsim"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input 
+                        type="text" 
+                        name="email" 
+                        class="form-control" 
+                        id="email" 
+                        placeholder="E-Mail"
+                        />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mesaj</label>
+                        <textarea 
+                            name="message" 
+                            id="message" 
+                            rows="5"
+                            class="form-control"
+                            placeholder="Mesajınız..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-yellow">Gönder</button>
+                </form>
+            </div>
+        </footer>
+    </section>
+    <!-- ! Contact End -->
+
+    <script src="/JS/kar-orani.js"></script>
+    <script src="/JS/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ? Navbar-Start */
+#navbar ul li{
+    list-style-type:none;
+    margin: 0.7rem;
+}
+#navbar ul{
+    display: flex;
+}
+#navbar h1{
+    color: #fff;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+.navbar ul li a{
+    padding: .5rem;
+    transition: 0.3s all ease;
+}
+.navbar ul li #matematik{
+    border-bottom: 1px solid #cc98f4;
+}
+.navbar ul li #saglik{
+    border-bottom: 1px solid #cc98f4;
+}
+.navbar ul li #ticaret{
+    border-bottom: 1px solid #cc98f4;
+}
+
+.navbar ul li a:hover{
+    background: #fff;
+    color: #818181;
+    border-radius: .5rem;
+}
+.navbar ul li ul{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-top: 0.1rem;
+    margin-left: -1px;
+}
+.navbar ul li ul li a{
+    color:#8f00ff;
+    margin: -0.5rem;
+}
+.navbar ul li ul li a:hover{
+    color: white;
+    background-color: #8f00ff;
+}
+
+/* ? Navbar-End */
+/* ? colums-Start */
+
+
+.row{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.row .col-1,
+.row .col-2{
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1.7rem;
+}
+.row .col-1 .yama-notlari .başlık{
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    width: 700px;
+}
+
+.row .col-1 li{
+    font-weight: bold;
+}
+.row .col-1 .güncellemeler .güncelleme-padding{
+    padding-left: 1rem;
+}
+.row .col-1 .güncellemeler{
+    color: black;
+    margin-left: .5rem;
+    padding: 0 .5rem 0 1rem;
+    border-left: 2px solid #2962a5;
+    text-align: justify;
+}
+
+.row .col-1 .güncellemeler::before {
+    content: attr(data-date);
+    left: 1rem;
+    font-weight: 700;
+    top: 0.63rem;
+    color: black;
+}
+
+.row .col-1 .güncellemeler::before, .row .col-1 .güncellemeler::after{
+    display: block;
+}
+
+.row .col-1{
+    padding-left: 13%;
+}
+.row .col-2{
+    padding-right: 13%;
+}
+
+.row .col-1 p{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.row .col-2 .social-media p::after{
+    content: "";
+    width: 300px;
+    height: 1.3px;
+    display: block;
+    background-color: #2962a5;
+    margin: 0.5rem 0;  
+}
+
+.row .col-2 .social-media {
+    text-align: center;
+    margin-left: 3rem;
+}
+.row .col-2{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    border-left: 2px solid #2962a5;
+}
+.row .col-2 .social-media .fa-instagram{
+    text-decoration: none;
+    animation-name: instagram-animation;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+    
+}
+@keyframes instagram-animation
+{
+    25% { transform: rotate(45deg);}
+    33%  { color: red; }
+    50%{  transform: rotate(0deg);}
+    66%  { color: blue; }
+    75% { transform: rotate(-45deg);}
+    100%  { color: yellow;   transform: rotate(0deg);}
+}
+.row .col-2 .social-media .fa-instagram:hover{
+    animation-iteration-count: 0;
+}
+.row .col-2 .social-media .fa-facebook{
+    animation-name: facebook-animation;
+    animation-duration: 7s;
+    animation-iteration-count:infinite;
+}
+@keyframes facebook-animation
+{   
+    25% { transform: rotate(45deg);}
+    33%  { color: red; }
+    50%{  transform: rotate(0deg);}
+    66%  { color: blue; }
+    75% { transform: rotate(-45deg);}
+    100%  { color: yellow;   transform: rotate(0deg);}
+}
+.row .col-2 .social-media .fa-facebook:hover{
+    animation-iteration-count: 0;
+}
+
+.col-2 .oneriler .oneri{
+    
+    margin-top: 1rem;
+    background-color: #8f00ff;
+    border-radius: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-left: 3rem;
+    font-family: sans-serif;
+    line-height: 24px;
+    
+}
+.col-2 .oneriler .oneri p{
+    font-size: 24px;
+    margin-bottom: 1.75rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: normal;
+    margin-top: 2rem;
+}
+
+
+/* Contact Start */
+#contact {
+    color: #fff;
+    padding: 1rem;
+    margin-top:7rem;
+}
+
+#contact .contact-form{
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .contact-form ul{
+    list-style-type: none; /* listelerdeki noktalar gitti */
+    display: flex; /*yan yana geldi*/
+    margin-top: 1rem;
+    align-self: center; /*ortalamak için kullandık*/
+}
+
+#contact .contact-form ul li a{
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+#contact .contact-form ul li a:hover{
+    opacity: 0.8;
+}
+
+
